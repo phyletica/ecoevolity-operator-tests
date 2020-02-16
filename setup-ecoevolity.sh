@@ -8,6 +8,10 @@ if [ -n "$PBS_JOBNAME" ]
 then
     source "${PBS_O_HOME}/.bash_profile"
     cd "$PBS_O_WORKDIR"
+fi
+
+if [ -n "$(uname -a | grep "hopper")" ]
+then
     module load gcc/5.3.0
     module load cmake/3.7.1
 fi
