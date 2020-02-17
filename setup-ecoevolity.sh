@@ -2,7 +2,7 @@
 
 set -e
 
-ecoevolity_commit="fb4c09169"
+ecoevolity_commit="c5ba202fb"
 
 if [ -n "$PBS_JOBNAME" ]
 then
