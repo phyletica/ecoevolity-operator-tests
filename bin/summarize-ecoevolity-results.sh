@@ -122,12 +122,7 @@ gzip -k -d *-state-run-1.log.gz
 for config_name in "cyrtodactylus-pyp-discount-mixer" "cyrtodactylus-pyp-discount-mover" "cyrtodactylus-rjsw"
 do
     pyco-sumchains run-?-${config_name}-state-run-1.log.gz > "${plot_dir}/pyco-sumchains-${config_name}.txt"
-    if [ "$config_name" = "cyrtodactylus-rjsw" ]
-    then
-        ${bin_dir}/sumcoevolity -f -b $burnin -p "${plot_dir}/sumcoevolity-${config_name}-" run-?-${config_name}-state-run-1.log
-    else
-        ${bin_dir}/sumcoevolity -f -b $burnin -n 1000000 -p "${plot_dir}/sumcoevolity-${config_name}-" -c "${ecoevolity_config_dir}/${config_name}.yml" run-?-${config_name}-state-run-1.log
-    fi
+    ${bin_dir}/sumcoevolity -f -b $burnin -n 1000000 -p "${plot_dir}/sumcoevolity-${config_name}-" -c "${ecoevolity_config_dir}/${config_name}.yml" run-?-${config_name}-state-run-1.log
 done
 
 # Only needed unzipped log files for sumcoevolity
